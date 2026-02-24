@@ -2,6 +2,7 @@
 
 **Modelado de Series Temporales Económicas: De la Tasa de Cambio Relativa a los Modelos de Transición de Régimen Estocásticamente Estructurados**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18752541.svg)](https://doi.org/10.5281/zenodo.18752541)
 [![License: MIT](https://img.shields.io/badge/License-MIT-5E81AC.svg)](LICENSE)
 [![LaTeX](https://img.shields.io/badge/LaTeX-Thesis-2E3440.svg)]()
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-A3BE8C.svg)](https://python.org)
@@ -124,7 +125,8 @@ Maestría en Matemática — Universidad Nacional Autónoma de Honduras (UNAH)
   school  = {Universidad Nacional Autónoma de Honduras},
   year    = {2026},
   type    = {Tesis de Maestría},
-  url     = {https://github.com/NORSAB/EcoSeries-RegimeSwitching}
+  doi     = {10.5281/zenodo.18752541},
+  url     = {https://doi.org/10.5281/zenodo.18752541}
 }
 ```
 

@@ -166,9 +166,9 @@ originales (D1–D7) fueron resueltas durante la sesión de auditoría V1.
 - [x] **EF-02** ✅ Mover código Python de Cap 6 a Apéndice
   - ~~Código SRep y simulación Markov movidos al Apéndice B1~~ ✅
 
-- [ ] **EF-03** Obtener DOI vía Zenodo para el repositorio
-  - Crear release en GitHub.
-  - Vincular con Zenodo para DOI automático.
+- [x] **EF-03** ✅ Obtener DOI vía Zenodo para el repositorio
+  - ~~DOI: 10.5281/zenodo.18752541~~ ✅
+  - Badge agregado al README, DOI en Cap 3.
 
 ### REFORMAS VISUALES APLICADAS ✅
 
