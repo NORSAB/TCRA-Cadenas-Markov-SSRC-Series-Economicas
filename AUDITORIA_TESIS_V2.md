@@ -143,12 +143,10 @@ originales (D1–D7) fueron resueltas durante la sesión de auditoría V1.
   - Reemplazar figuras ilustrativas por simulaciones con datos de combustibles.
   - Eliminar la nota "carácter ilustrativo".
 
-- [ ] **DI-02** Unificar estilo visual de gráficos
+- [x] **DI-02** ✅ Unificar estilo visual de gráficos
   - ~~Paleta de colores definida~~ ✅ (`thesis_colors.py`)
-  - Etiquetas de ejes en español.
-  - Resolución mínima 300 dpi.
-  - Figuras: grafos de transición, evolución de probabilidades,
-    sensibilidad W, heatmaps de P.
+  - ~~Paleta Nord aplicada a todos los TikZ (Cap 3-6, Apéndices)~~ ✅
+  - ~~Grafos de Markov con colores Nord por régimen~~ ✅
 
 - [ ] **DI-03** Actualizar datos de combustibles (si disponibles)
   - Extender series hasta 2026 si hay datos nuevos.
