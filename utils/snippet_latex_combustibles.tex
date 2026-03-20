@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{@{}lccccccccc@{}}
+\toprule
+& \multicolumn{8}{c}{\textbf{Desempeño MAPE (\%) por Partición Expansiva}} & \\
+\cmidrule(lr){2-9}
+\textbf{Macro-Serie} & \textbf{60/40} & \textbf{65/35} & \textbf{70/30} & \textbf{75/25} & \textbf{80/20} & \textbf{85/15} & \textbf{90/10} & \textbf{95/5} & \textbf{Promedio Global} \\
+\midrule
+\textbf{Super} & 0.71\% & 0.67\% & 0.60\% & 0.53\% & 0.50\% & 0.52\% & 0.53\% & 0.53\% & \textbf{0.57\%} \\
+\textbf{Regular} & 0.70\% & 0.66\% & 0.61\% & 0.57\% & 0.48\% & 0.47\% & 0.51\% & 0.48\% & \textbf{0.56\%} \\
+\textbf{Diesel} & 0.80\% & 0.77\% & 0.65\% & 0.62\% & 0.62\% & 0.58\% & 0.60\% & 0.56\% & \textbf{0.65\%} \\
+\textbf{Kerosene} & 1.07\% & 0.99\% & 0.90\% & 0.80\% & 0.80\% & 0.78\% & 0.82\% & 0.83\% & \textbf{0.87\%} \\
+\bottomrule
+\end{tabular}
+}
+\caption{Evolución del error predictivo porcentual absoluto (MAPE) a lo largo de los anclajes temporales de validación un-paso-adelante para los cuatro macro-indicadores energéticos.}
+\label{tab:cv_combustibles_tcroc}
+\end{table}

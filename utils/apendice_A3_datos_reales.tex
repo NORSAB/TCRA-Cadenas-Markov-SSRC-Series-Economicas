@@ -1,0 +1,66 @@
+
+% ============================================================
+% APÉNDICE A3 — Figuras con datos REALES (Gasolina Super)
+% Generado automáticamente desde los outputs del modelo TCROC-Markov
+% ============================================================
+
+\section{Ilustraciones del Proceso Estocástico \texorpdfstring{$\{S_t\}$}{St}}
+\label{apx:figuras_proceso_st}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.8\textwidth,
+    xlabel={Tiempo \( t \)}, ylabel={Estado \( S_t \)},
+    ymin=0.5, ymax=4.5,
+    ytick={1,2,3,4}, 
+    yticklabels={\\textnormal{s\\_1},\\textnormal{s\\_2},\\textnormal{s\\_3},\\textnormal{s\\_4}},
+    legend pos=north west,
+    grid=major,
+    title={Trayectorias del proceso $\{S_t\}$ (Gasolina Super)}
+  ]
+  \addplot+[mark=*, thick, nordFrost] coordinates {
+    (1,2) (2,3) (3,3) (4,3) (5,3) (6,3) (7,3) (8,3) (9,3) (10,3)
+  };
+  \addplot+[mark=triangle*, thick, nordRed] coordinates {
+    (1,2) (2,2) (3,2) (4,2) (5,2) (6,2) (7,2) (8,2) (9,2) (10,2)
+  };
+  \legend{Observada, Simulada ($\hat{P}$)}
+  \end{axis}
+\end{tikzpicture}
+\caption{Trayectorias del proceso $\{S_t\}$ para la Gasolina~Super: 
+la secuencia observada (datos reales del período 2017~--~2025) frente a 
+una realización simulada a partir de la matriz $\hat{P}$ estimada 
+por NNLS.}
+\label{fig:apx_st_trayectorias}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=2cm and 2.5cm, >=Stealth]
+\node[state, fill=nordRed!15] (s1)  {\( s1 \)};
+\node[state, fill=nordGreen!15] (s2) [right=of s1] {\( s2 \)};
+\node[state, fill=nordYellow!15] (s3) [below=of s2] {\( s3 \)};
+\node[state, fill=nordFrost!15] (s4) [left=of s3] {\( s4 \)};
+
+\draw[->] (s1) to[loop above] node {0.90} (s1);
+\draw[->] (s1) to[bend left=15] node[right] {0.10} (s2);
+\draw[->] (s2) to[loop above] node {0.92} (s2);
+\draw[->] (s3) to[bend left=15] node[above] {0.08} (s2);
+\draw[->] (s3) to[loop below] node {0.89} (s3);
+\draw[->] (s4) to[loop below] node {0.95} (s4);
+\end{tikzpicture}
+\caption{Diagrama de transiciones entre estados $s_j$ para la 
+Gasolina~Super con $K=4$ regímenes. Las probabilidades 
+corresponden a la matriz $\hat{P}$ estimada por NNLS 
+(véase Capítulo~\ref{cap:modelo_hibrido}).}
+\label{fig:apx_diagrama_transiciones}
+\end{figure}
+
+\vspace{1em}
+\noindent\textbf{Nota:} Las figuras de esta sección están generadas 
+a partir de las matrices $\hat{P}$ estimadas con datos reales de 
+precios de combustibles de Honduras (2017--2025). La trayectoria 
+observada corresponde a la serie de la Gasolina~Super procesada con 
+los hiperparámetros óptimos obtenidos en el Capítulo~\ref{cap:regimenes_combustibles}.

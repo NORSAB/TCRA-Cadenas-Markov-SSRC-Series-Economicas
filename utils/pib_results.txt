@@ -1,0 +1,29 @@
+============================================================
+RESULTADOS NUMÉRICOS PARA TEX (2025 y 2026)
+============================================================
+
+--- Variable: PIB en Dólares Corrientes (Millones de USD) ---
+[TCROC] beta=1.0704, alpha=0.0704 | 2025: 39,705,618,090.82 | 2026: 42,501,605,647.18
+[TCROCM] beta=1.0854, alpha=0.0854 | 2025: 40,259,773,807.71 | 2026: 43,696,240,836.69
+[ETCROC] beta=1.0754, alpha=0.0754 | 2025: 39,891,586,806.92 | 2026: 42,900,666,499.34
+[ETCROCM] beta=1.0876, alpha=0.0876 | 2025: 40,343,437,673.75 | 2026: 43,878,039,920.50
+
+--- Variable: Tasa de Crecimiento Anual del PIB (%) ---
+[TCROC] beta=0.3939, alpha=-0.6061 | 2025: 0.01 | 2026: 0.01
+[TCROCM] beta=-0.2035, alpha=-1.2035 | 2025: -0.01 | 2026: 0.00
+[ETCROC] beta=0.1537, alpha=-0.8463 | 2025: 0.01 | 2026: 0.00
+[ETCROCM] beta=-0.1318, alpha=-1.1318 | 2025: -0.00 | 2026: 0.00
+
+--- Variable: PIB per cápita en Dólares Corrientes (USD) ---
+[TCROC] beta=1.0493, alpha=0.0493 | 2025: 3,595.44 | 2026: 3,772.81
+[TCROCM] beta=1.0661, alpha=0.0661 | 2025: 3,652.98 | 2026: 3,894.55
+[ETCROC] beta=1.0545, alpha=0.0545 | 2025: 3,613.12 | 2026: 3,810.01
+[ETCROCM] beta=1.0687, alpha=0.0687 | 2025: 3,661.78 | 2026: 3,913.33
+
+--- Variable: PIB per cápita en Lempiras a Precios Constantes ---
+[TCROC] beta=1.0143, alpha=0.0143 | 2025: 23,650.23 | 2026: 23,988.07
+[TCROCM] beta=1.0086, alpha=0.0086 | 2025: 23,517.63 | 2026: 23,719.84
+[ETCROC] beta=1.0140, alpha=0.0140 | 2025: 23,644.24 | 2026: 23,975.93
+[ETCROCM] beta=1.0121, alpha=0.0121 | 2025: 23,598.81 | 2026: 23,883.88
+
+Imagen guardada en: D:\2026\Tesis2026\Capitulo 1 IEEE\figures\EjemploPIB_TCROC_4Variantes.png

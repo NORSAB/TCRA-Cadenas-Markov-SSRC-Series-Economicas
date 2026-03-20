@@ -1,0 +1,170 @@
+% ═══════════════════════════════════════════════════════════════════
+% Ap\'endice A3 --- Figuras con datos REALES de combustibles
+% Generado autom\'aticamente por generar_apendice_datos_reales.py
+% Datos: TCROC-Markov, ene 2017 -- jul 2025
+% ═══════════════════════════════════════════════════════════════════
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.85\textwidth, height=6cm,
+    xlabel={Periodo $t$ (semanas)}, ylabel={Estado $S_t$},
+    ymin=0.5, ymax=4.5,
+    xmin=0.5, xmax=20.5,
+    ytick={1,2,3,4},
+    yticklabels={\textnormal{Descenso fuerte},\textnormal{Estable/leve baja},\textnormal{Alza moderada},\textnormal{Alza fuerte}},
+    legend pos=north east,
+    legend style={font=\footnotesize},
+    grid=major,
+    grid style={dashed, opacity=0.4},
+    title={Trayectorias del proceso $\{S_t\}$ --- Super},
+    title style={font=\bfseries},
+  ]
+  \addplot+[mark=*, thick, nordFrost, mark size=2.5pt] coordinates {
+    (1,4) (2,3) (3,3) (4,3) (5,3) (6,3) (7,3) (8,3) (9,2) (10,3) (11,3) (12,3) (13,3) (14,3) (15,3) (16,3) (17,3) (18,2) (19,2) (20,1)
+  };
+  \addplot+[mark=triangle*, thick, nordRed, mark size=2.5pt, dashed] coordinates {
+    (1,4) (2,4) (3,4) (4,4) (5,4) (6,1) (7,1) (8,1) (9,1) (10,1) (11,1) (12,1) (13,1) (14,1) (15,1) (16,1) (17,1) (18,1) (19,1) (20,1)
+  };
+  \legend{Observada ($\hat{P}$ real), Simulada ($\hat{P}$ Markov)}
+  \end{axis}
+\end{tikzpicture}
+\caption{Trayectorias del proceso $\{S_t\}$ para combustible \textbf{Super}: 
+secuencia observada (asignada por $\alpha_t$ y centroides $K$-means con $K=4$) 
+vs.\ trayectoria simulada a partir de la matriz de transici\'on $\hat{P}$ estimada.
+Ventana de 20 periodos seleccionada por m\'axima variabilidad de reg\'imenes.}
+\label{fig:apx_trayectorias_super}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=2.5cm and 3cm, >=Stealth,
+  state/.style={circle, draw, minimum size=1cm, font=\large}]
+\node[state, fill=nordRed!15] (s1) {$s_1$};
+\node[state, fill=nordFrost!15] (s2) [right=of s1] {$s_2$};
+\node[state, fill=nordGreen!15] (s3) [below=of s2] {$s_3$};
+\node[state, fill=nordYellow!15] (s4) [left=of s3] {$s_4$};
+
+\node[below=0.3cm of s1, font=\scriptsize\itshape] {Descenso fuerte};
+\node[below=0.3cm of s2, font=\scriptsize\itshape] {Estable/leve baja};
+\node[below=0.3cm of s3, font=\scriptsize\itshape] {Alza moderada};
+\node[below=0.3cm of s4, font=\scriptsize\itshape] {Alza fuerte};
+
+\draw[->] (s1) to[loop above] node {0.50} (s1);
+\draw[->] (s2) to[bend left=10] node[below, font=\footnotesize] {0.25} (s1);
+\draw[->] (s2) to[loop above] node {0.71} (s2);
+\draw[->] (s2) to[bend left=15] node[above, font=\footnotesize] {0.10} (s3);
+\draw[->] (s3) to[bend left=15] node[below, font=\footnotesize] {0.27} (s2);
+\draw[->] (s3) to[loop below] node {0.82} (s3);
+\draw[->] (s3) to[bend left=15] node[above, font=\footnotesize] {0.23} (s4);
+\draw[->] (s4) to[bend left=10] node[left, font=\footnotesize] {0.25} (s1);
+\draw[->] (s4) to[bend left=15] node[below, font=\footnotesize] {0.08} (s3);
+\draw[->] (s4) to[loop below] node {0.76} (s4);
+\end{tikzpicture}
+\caption{Diagrama de transici\'on entre reg\'imenes para combustible \textbf{Super} 
+con $K=4$ estados. Las probabilidades provienen de la matriz $\hat{P}$ estimada 
+mediante el modelo TCROC-Markov con datos reales (ene 2017 -- jul 2025).
+Se muestran solo transiciones con probabilidad $\geq 0.02$.}
+\label{fig:apx_diagrama_super}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Matriz de transici\'on estimada $\hat{P}$ para combustible \textbf{Super} ($K=4$).}
+\label{tab:apx_P_super}
+\begin{tabular}{c|cccc}
+\toprule
+ & $s_1$ & $s_2$ & $s_3$ & $s_4$ \\
+\midrule
+  $s_1$ & 0.500 & 0.011 & $-$ & $-$ \\
+  $s_2$ & 0.250 & \textbf{0.711} & 0.097 & 0.011 \\
+  $s_3$ & $-$ & 0.267 & \textbf{0.819} & 0.232 \\
+  $s_4$ & 0.250 & 0.011 & 0.085 & \textbf{0.758} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.85\textwidth, height=6cm,
+    xlabel={Periodo $t$ (semanas)}, ylabel={Estado $S_t$},
+    ymin=0.5, ymax=4.5,
+    xmin=0.5, xmax=20.5,
+    ytick={1,2,3,4},
+    yticklabels={\textnormal{Descenso fuerte},\textnormal{Estable/leve baja},\textnormal{Alza moderada},\textnormal{Alza fuerte}},
+    legend pos=north east,
+    legend style={font=\footnotesize},
+    grid=major,
+    grid style={dashed, opacity=0.4},
+    title={Trayectorias del proceso $\{S_t\}$ --- Regular},
+    title style={font=\bfseries},
+  ]
+  \addplot+[mark=*, thick, nordFrost, mark size=2.5pt] coordinates {
+    (1,4) (2,4) (3,4) (4,3) (5,3) (6,3) (7,3) (8,2) (9,2) (10,2) (11,2) (12,1) (13,1) (14,1) (15,1) (16,1) (17,1) (18,1) (19,1) (20,2)
+  };
+  \addplot+[mark=triangle*, thick, nordRed, mark size=2.5pt, dashed] coordinates {
+    (1,4) (2,4) (3,4) (4,4) (5,4) (6,1) (7,2) (8,2) (9,2) (10,1) (11,1) (12,1) (13,1) (14,1) (15,1) (16,1) (17,1) (18,1) (19,1) (20,1)
+  };
+  \legend{Observada ($\hat{P}$ real), Simulada ($\hat{P}$ Markov)}
+  \end{axis}
+\end{tikzpicture}
+\caption{Trayectorias del proceso $\{S_t\}$ para combustible \textbf{Regular}: 
+secuencia observada (asignada por $\alpha_t$ y centroides $K$-means con $K=4$) 
+vs.\ trayectoria simulada a partir de la matriz de transici\'on $\hat{P}$ estimada.
+Ventana de 20 periodos seleccionada por m\'axima variabilidad de reg\'imenes.}
+\label{fig:apx_trayectorias_regular}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=2.5cm and 3cm, >=Stealth,
+  state/.style={circle, draw, minimum size=1cm, font=\large}]
+\node[state, fill=nordRed!15] (s1) {$s_1$};
+\node[state, fill=nordFrost!15] (s2) [right=of s1] {$s_2$};
+\node[state, fill=nordGreen!15] (s3) [below=of s2] {$s_3$};
+\node[state, fill=nordYellow!15] (s4) [left=of s3] {$s_4$};
+
+\node[below=0.3cm of s1, font=\scriptsize\itshape] {Descenso fuerte};
+\node[below=0.3cm of s2, font=\scriptsize\itshape] {Estable/leve baja};
+\node[below=0.3cm of s3, font=\scriptsize\itshape] {Alza moderada};
+\node[below=0.3cm of s4, font=\scriptsize\itshape] {Alza fuerte};
+
+\draw[->] (s1) to[loop above] node {0.50} (s1);
+\draw[->] (s2) to[bend left=10] node[below, font=\footnotesize] {0.25} (s1);
+\draw[->] (s2) to[loop above] node {0.74} (s2);
+\draw[->] (s2) to[bend left=15] node[above, font=\footnotesize] {0.04} (s3);
+\draw[->] (s3) to[bend left=15] node[below, font=\footnotesize] {0.23} (s2);
+\draw[->] (s3) to[loop below] node {0.88} (s3);
+\draw[->] (s3) to[bend left=15] node[above, font=\footnotesize] {0.23} (s4);
+\draw[->] (s4) to[bend left=10] node[left, font=\footnotesize] {0.25} (s1);
+\draw[->] (s4) to[bend left=15] node[below, font=\footnotesize] {0.08} (s3);
+\draw[->] (s4) to[loop below] node {0.76} (s4);
+\end{tikzpicture}
+\caption{Diagrama de transici\'on entre reg\'imenes para combustible \textbf{Regular} 
+con $K=4$ estados. Las probabilidades provienen de la matriz $\hat{P}$ estimada 
+mediante el modelo TCROC-Markov con datos reales (ene 2017 -- jul 2025).
+Se muestran solo transiciones con probabilidad $\geq 0.02$.}
+\label{fig:apx_diagrama_regular}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Matriz de transici\'on estimada $\hat{P}$ para combustible \textbf{Regular} ($K=4$).}
+\label{tab:apx_P_regular}
+\begin{tabular}{c|cccc}
+\toprule
+ & $s_1$ & $s_2$ & $s_3$ & $s_4$ \\
+\midrule
+  $s_1$ & 0.500 & 0.019 & $-$ & $-$ \\
+  $s_2$ & 0.250 & \textbf{0.736} & 0.043 & 0.010 \\
+  $s_3$ & $-$ & 0.226 & \textbf{0.878} & 0.225 \\
+  $s_4$ & 0.250 & 0.019 & 0.079 & \textbf{0.765} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
