@@ -13,10 +13,10 @@
 Código fuente y datos de la tesis de maestría en Matemática (UNAH). Se propone una cadena metodológica para el análisis de regímenes en series económicas de Honduras:
 
 ```
-TCROC → K-Means → Cadena de Markov → NNLS → SSRC
+Tasa de Cambio Relativa → K-Means → Cadena de Markov → NNLS → SSRC
 ```
 
-1. **TCROC**: operador variacional que estima tasas de cambio relativas.
+1. **Tasa de Cambio Relativa**: operador variacional que estima tasas de cambio entre valores consecutivos.
 2. **Discretización (K-Means)**: cuantización en K regímenes económicos.
 3. **Cadena de Markov**: modelado de transiciones con análisis ergódico.
 4. **NNLS**: estimación de matrices de transición con restricciones de no-negatividad.
@@ -27,14 +27,14 @@ TCROC → K-Means → Cadena de Markov → NNLS → SSRC
 ```
 TCROC-Cadenas-Markov-SSRC-Series-Economicas/
 │
-├── cap2_familias_TCRA/           # Cap. 2-3: Variantes del operador TCRA
+├── cap2_familias_TCRA/           # Cap. 2-3: Variantes del operador
 │   ├── src/                      # Módulos: config, modelos, evaluación
 │   ├── pipelines/                # Grid search y generación de resultados
 │   └── README.md
 │
 ├── cap4_modelo_NNLS/             # Cap. 4: Modelo Híbrido NNLS
 │   ├── config.py                 # Hiperparámetros (W=2, λ=1, K=4)
-│   ├── pipeline.py               # Pipeline: TCRA → NNLS → validación
+│   ├── pipeline.py               # Pipeline completo
 │   └── README.md
 │
 ├── cap5_deteccion_pronostico/    # Cap. 5: Detección de Regímenes y Pronóstico
@@ -84,7 +84,7 @@ Maestría en Matemática — Universidad Nacional Autónoma de Honduras (UNAH)
 ## Cita
 
 ```bibtex
-@mastersthesis{sabillon2026tcroc,
+@mastersthesis{sabillon2026tesis,
   author  = {Sabillón Castro, Norman Reynaldo},
   title   = {Modelado de Series Temporales Económicas: De la Tasa de
              Cambio Relativa a los Modelos de Transición de Régimen
